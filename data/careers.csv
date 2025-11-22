@@ -1,0 +1,11 @@
+career_id,career_title,required_skills,preferred_skills,industry,growth_potential,salary_range,education_level
+1,Data Scientist,"python,machine_learning,statistics,sql","deep_learning,cloud_computing,big_data",Technology,High,"80,000-120,000",Master
+2,Software Engineer,"python,java,algorithms,data_structures","aws,docker,kubernetes",Technology,High,"70,000-110,000",Bachelor
+3,Web Developer,"javascript,html,css,python","react,nodejs,ui_ux",Technology,Medium,"50,000-90,000",Bachelor
+4,Data Analyst,"python,sql,excel,statistics","tableau,powerbi,data_visualization",Technology,High,"60,000-100,000",Bachelor
+5,AI Engineer,"python,machine_learning,deep_learning,mathematics","tensorflow,pytorch,nlp",Technology,Very High,"90,000-140,000",Master
+6,DevOps Engineer,"aws,linux,docker,kubernetes","python,jenkins,ci_cd",Technology,High,"80,000-130,000",Bachelor
+7,UX Designer,"figma,ui_design,user_research,wireframing","javascript,css,prototyping",Design,Medium,"50,000-85,000",Bachelor
+8,Product Manager,"project_management,agile,product_strategy","sql,analytics,user_research",Business,High,"85,000-130,000",Master
+9,Cybersecurity Analyst,"network_security,linux,cybersecurity","python,incident_response,compliance",Technology,Very High,"75,000-120,000",Bachelor
+10,Cloud Architect,"aws,azure,cloud_computing,networking","python,terraform,devops",Technology,Very High,"100,000-150,000",Master

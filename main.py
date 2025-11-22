@@ -133,58 +133,58 @@ class CareerRecommenderSystem:
         print(f"   Goals: {student.goals}")
         
         # Get career recommendations
-        print("\n🔍 Analyzing your profile and finding career matches...")
+        print("\n Analyzing your profile and finding career matches...")
         recommendations = self.career_matcher.find_career_matches(student, top_n=5)
         
-        print("\n🏆 Top Career Recommendations for You:")
+        print("\n Top Career Recommendations for You:")
         print("=" * 40)
         for i, rec in enumerate(recommendations, 1):
             print(f"{i}. {rec['career']}")
-            print(f"   ⭐ Overall Score: {rec['overall_score']:.2f}")
-            print(f"   🔧 Skill Match: {rec['skill_match_percentage']}%")
-            print(f"   📈 Growth: {rec['growth_potential']}")
-            print(f"   💰 Salary: {rec['salary_range']}")
-            print(f"   🎓 Education: {rec['education_level']}")
+            print(f"    Overall Score: {rec['overall_score']:.2f}")
+            print(f"    Skill Match: {rec['skill_match_percentage']}%")
+            print(f"    Growth: {rec['growth_potential']}")
+            print(f"    Salary: {rec['salary_range']}")
+            print(f"    Education: {rec['education_level']}")
             if rec['missing_skills']:
-                print(f"   📚 Skills to learn: {', '.join(rec['missing_skills'])}")
+                print(f"    Skills to learn: {', '.join(rec['missing_skills'])}")
             print()
         
         # Generate learning path for top recommendation
         if recommendations:
             top_career = recommendations[0]['career']
-            print(f"📚 Generating learning path for your top career: {top_career}")
+            print(f" Generating learning path for your top career: {top_career}")
             
             learning_path = self.path_generator.generate_learning_path(student, top_career)
             
             if learning_path:
-                print(f"\n🎯 Your Learning Path for {top_career}:")
+                print(f"\n Your Learning Path for {top_career}:")
                 print(f"Current Skills Match: {learning_path['current_skills_match']}")
                 print(f"Skill Gaps to Fill: {', '.join(learning_path['skill_gaps'])}")
                 
-                print("\n📅 Your Learning Plan:")
+                print("\n Your Learning Plan:")
                 for phase in learning_path['learning_phases']:
                     print(f"  {phase['phase_name']} ({phase['duration_weeks']} weeks):")
-                    print(f"    📖 Skills: {', '.join(phase['skills_to_learn'])}")
-                    print(f"    🎯 Milestones: {', '.join(phase['milestones'])}")
+                    print(f"     Skills: {', '.join(phase['skills_to_learn'])}")
+                    print(f"     Milestones: {', '.join(phase['milestones'])}")
                 
-                print("\n📚 Learning Resources:")
+                print("\n Learning Resources:")
                 for skill, resources in learning_path['resources'].items():
                     print(f"  {skill}: {', '.join(resources)}")
         
         # Ask for feedback
-        feedback = input("\n💬 How was your experience with our career recommender? ")
+        feedback = input("\n How was your experience with our career recommender? ")
         if feedback:
             sentiment = self.nlp_processor.analyze_feedback_sentiment(feedback)
             print(f"   Thank you for your {sentiment['sentiment']} feedback!")
         
         # Visualize results
-        print("\n📊 Generating your personalized career report...")
+        print("\n Generating your personalized career report...")
         self.visualizer.plot_recommendation_scores(recommendations, student.name)
         
         if learning_path:
             self.visualizer.plot_skill_gaps(learning_path)
         
-        print("\n🎉 Career exploration complete! Good luck on your journey!")
+        print("\n Career exploration complete! Good luck on your journey!")
 
 if __name__ == "__main__":
     system = CareerRecommenderSystem()
